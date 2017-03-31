@@ -1,0 +1,21 @@
+.error-message 
+{
+	float:right;
+	color:red;
+	padding-right:15px;
+}
+.pagination
+{
+	margin:0px 0px !important;
+	float:right;
+}
+.error
+{
+	color:#FF0000;
+	
+}
+.rpt-table 
+{font-size:12px;}
+
+.rpt-table td
+{padding:1px;}
