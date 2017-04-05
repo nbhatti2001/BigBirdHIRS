@@ -37,19 +37,23 @@
 								</div>
 							</div>
 					</div>
-					<div class="col-xs-6 text-right">
+					<div class="box-header ">
+					
 						<?php if(isset($this->request->data['station_id'])) 
-						echo $this->Html->link("Download Excel",['action'=>'ExportAttendenceSheet',$this->request->data['station_id'],$this->request->data['department_id'],$this->request->data['pmonth']]);
+							echo $this->Html->link("Download Excel",['action'=>'ExportAttendenceSheet',$this->request->data['station_id'],$this->request->data['department_id'],$this->request->data['pmonth']]);
 					?>
 					<!-- for FILE INPUT -->
-						<div class="box">
+						<div class="col-xs-6 ">
+						
 							<?php
+							
+							
 								$myTemplates =  [
-								'inputContainer' => '<div class="form-group input {{type}}{{required}}">{{content}}</div>',
+								'inputContainer' => '<div class="form-group {{type}}{{required}}">{{content}}</div>',
 								'inputContainerError' => '<div class="form-group input {{type}}{{required}} error">{{content}}{{error}}</div>',
-								'label' => '<label {{attrs}}>{{text}}</label>',
-								'input' => '<div class="col-sm-10"><input class="form-control" type="{{type}}" name="{{name}}"  {{attrs}}/><p class="help-block">Example block-level help text here.</p></div>',
-								'select' => '<div class="col-sm-10"><select class="form-control" type="{{type}}" name="{{name}}"  {{attrs}}/>{{content}}</select></div>'
+								'label' => '<label class="col-sm-3" {{attrs}}>{{text}}</label>',
+								'input' => '<div class="col-sm-9"><input class="form-control" type="{{type}}" name="{{name}}"  {{attrs}}/><p class="help-block">Example block-level help text here.</p></div>',
+								'select' => '<div class="col-sm-9"><select class="form-control" type="{{type}}" name="{{name}}"  {{attrs}}/>{{content}}</select></div>'
 								];
 								$this->Form->templates($myTemplates);
 								echo $this->Form->create('',array('class'=>'form-horizontal','enctype'=>"multipart/form-data")) 
@@ -58,8 +62,7 @@
 								 <div class="box-body"> 
 								<fieldset>
 								<?php
-								echo $this->Form->input('upload_file',['type'=>'file']);	
-
+									echo $this->Form->input('upload_file',['type'=>'file']);	
 								?>
 								</fieldset>
 								</div>
